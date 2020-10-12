@@ -531,10 +531,12 @@ def init_model(run_iter = 'aax',
   model_dir = os.path.dirname(os.path.realpath(__file__))
   if sklearn.__version__ == '0.18.1':
     model_dir += '/model-sklearn-0.18.1'
-  elif sklearn.__version__ == '0.20.0':
-    model_dir += '/model-sklearn-0.20.0'
   else:
-    assert False, 'scikit-learn %s not supported' % (sklearn.__version__)
+    model_dir += '/model-sklearn-0.20.0'
+  #elif sklearn.__version__ == '0.20.0':
+  #  model_dir += '/model-sklearn-0.20.0'
+  #else:
+  #  assert False, 'scikit-learn %s not supported' % (sklearn.__version__)
 
   import sys
   def version_sensitive_pickle_load(f):
